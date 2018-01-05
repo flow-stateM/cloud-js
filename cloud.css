@@ -1,0 +1,646 @@
+html {
+  height: 100%;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #6ea7b2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+body .circle {
+  position: absolute;
+  background-color: rgba(93, 122, 255, 0.5);
+  border: 1px solid #5d7aff;
+  z-index: 5;
+  top: -999px;
+  left: -999px;
+}
+dfn {
+  font-style: normal;
+}
+input {
+  margin: 0;
+  padding: 0;
+  background: none;
+  outline: none;
+  border: none;
+}
+.wrap {
+  width: 1200px;
+  height: 650px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+.wrap.delete {
+  filter: blur(5px);
+}
+.clear:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+.sprite {
+  background: url("sprite.png") no-repeat;
+  display: inline-block;
+}
+header {
+  height: 70px;
+  padding-left: 28px;
+  box-sizing: border-box;
+  font-size: 0;
+  padding-right: 40px;
+}
+header h1 {
+  margin: 0;
+  padding: 0;
+  float: left;
+  background: url("images/logo.png") no-repeat center;
+  background-size: 100%; 
+  height: 35px;
+  width: 135px;
+  margin-top: 18px;
+  margin-right: 90px;
+}
+header .warning1,
+header .warning3,
+header .warning2 {
+  font-size: 14px;
+  line-height: 40px;
+  float: left;
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 20px;
+  border-radius: 20px;
+  display: none;
+  margin-top: 15px;
+  margin-right: 10px;
+  color: #fff;
+  background-color: #ef8989;
+}
+header .warning1.active,
+header .warning2.active,
+header .warning3.active {
+  display: inline-block;
+}
+header .warning2 {
+  background-color: #86ce8b;
+}
+header .warning3 {
+  background-color: #f3a960;
+}
+header .warningIcon1,
+header .warningIcon2,
+header .warningIcon3 {
+  background: url("sprite.png") no-repeat;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-top: 8px;
+  vertical-align: top;
+  margin-right: 9px;
+}
+header .warningIcon1 {
+  background-position: 0 -74px;
+}
+header .warningIcon2 {
+  background-position: -27px -74px;
+}
+header .warningIcon3 {
+  background-position: -55px -74px;
+}
+header .set {
+  float: right;
+  height: 22px;
+  width: 30px;
+  background: url("sprite.png") no-repeat;
+  background-position: 14px 3px;
+  border-left: 1px solid #e0e6e7 ;
+  margin-top: 25px;
+}
+header .userHead {
+  float: right;
+  width: 52px;
+  margin-right: 16px;
+  height: 32px;
+  background-position: -50px 0;
+  margin-top: 20px;
+}
+.tool {
+  box-sizing: border-box;
+  border-top: 1px solid #d0d9de;
+  border-bottom: 1px solid #d0d9de;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ecf0f6;
+}
+.tool.notuse {
+  opacity: 0.5;
+}
+.tool div {
+  border: 1px solid #d0d9de;
+  background-color: white;
+  color: #66757f;
+  line-height: 36px;
+  height: 38px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.tool .download,
+.tool .share,
+.tool .delete {
+  width: 110px;
+}
+.tool .move,
+.tool .rename {
+  width: 120px;
+}
+.tool .create {
+  width: 154px;
+}
+.tool .reload,
+.tool .mode {
+  width: 38px;
+}
+.tool .sort {
+  width: 58px;
+}
+.tool .downloadIcon {
+  background-position: 0 -50px;
+  width: 16px;
+  height: 16px;
+}
+.tool .shareIcon {
+  background-position: -21px -50px;
+  width: 16px;
+  height: 16px;
+}
+.tool .moveIcon {
+  background-position: -42px -50px;
+  width: 16px;
+  height: 16px;
+}
+.tool .renameIcon {
+  background-position: -63px -50px;
+  width: 16px;
+  height: 16px;
+}
+.tool .deleteIcon {
+  background-position: -84px -50px;
+  width: 16px;
+  height: 16px;
+}
+.tool .createIcon {
+  background-position: -105px -50px;
+  width: 16px;
+  height: 16px;
+}
+.tool .reloadIcon {
+  background-position: -126px -50px;
+  width: 16px;
+  height: 16px;
+}
+.tool .none {
+  width: 212px;
+  opacity: 0;
+  cursor: default;
+}
+.tool .modeIcon {
+  background-position: -148px -50px;
+  width: 16px;
+  height: 16px;
+}
+.tool .sortIcon {
+  background-position: -169px -50px;
+  width: 34px;
+  height: 16px;
+}
+.path {
+  height: 48px;
+  border-bottom: 2px solid #e1e8ed;
+  font-size: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.path .allChecked {
+  margin-left: 15px;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  border: 1px solid #d0d9de;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.path .allChecked.checked {
+  background-image: url("images/icon/checked.png");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: center;
+}
+.path .pathIn {
+  max-width: 800px;
+  height: 100%;
+}
+.path .pathIn .pathContent {
+  height: 100%;
+  line-height: 48px;
+  font-size: 0;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+.path .pathIn .pathContent span {
+  display: inline-block;
+  font-size: 14px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.path .pathIn .pathContent:last-child {
+  box-shadow: 0 2px 0 0 #55addc;
+}
+.path .pathIn .pathContent:after {
+  content: '';
+  height: 100%;
+  width: 18px;
+  vertical-align: top;
+  background: url("sprite.png") no-repeat;
+  display: inline-block;
+  background-position: -115px -1px;
+  box-shadow: 0 2px 0 0 #e1e8ed;
+}
+.path .pathIn .pathContent:last-child:after {
+  display: none;
+}
+.fileWrap {
+  width: 100%;
+  height: 470px;
+  position: relative;
+  overflow: auto;
+  background-color: #f5f8fa;
+  border-radius: 0 0 10px 10px;
+}
+.fileWrap .fileContent {
+  width: 100%;
+  min-height: 470px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding-top: 10px;
+  background-color: #f5f8fa;
+  z-index: 1;
+}
+.fileWrap .fileContent.none {
+  background-image: url("nofiles.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.fileWrap .fileContent .fileItem {
+  border: 1px solid #ebeff0;
+  width: 170px;
+  height: 170px;
+  border-radius: 10px;
+  margin: 13px;
+  box-sizing: border-box;
+  background-color: #ebeff0;
+  position: relative;
+  background-image: url("images/icon/痴笑.png");
+  background-repeat: no-repeat;
+  background-size: 150px 150px ;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 3px 3px 5px 0 rgba(255, 255, 255, 0);
+}
+.fileWrap .fileContent .changeImg {
+  position: absolute;
+  display: none;
+}
+.fileWrap .fileContent .fileItem:hover .changeImg {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 50px;
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 5px;
+  background-color: rgba(93, 122, 255, 0.8);
+}
+.fileWrap .fileContent .fileItemName {
+  position: absolute;
+  max-width: 150px;
+  min-width: 32px;
+  text-align: center;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "黑体";
+  height: 16px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+}
+.fileWrap .fileContent .fileItemName span {
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 16px;
+}
+.fileWrap .fileContent .fileItemName.active span {
+  display: none;
+}
+.fileWrap .fileContent .fileItemNameInput {
+  background: grey;
+  width: 100px;
+  height: 16px;
+  display: none;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #fff;
+  vertical-align: top;
+}
+.fileWrap .fileContent .fileItemName.active .fileItemNameInput {
+  display: inline-block;
+}
+.fileWrap .fileContent .fileItem:hover {
+  background-color: white;
+  border: 1px solid white;
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+.fileWrap .fileContent .fileItem.checked {
+  background-color: white;
+  border: 1px solid #55addc;
+  box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.fileWrap .fileContent .checkedBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  border: 1px solid #d0d9de;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: white;
+}
+.fileWrap .fileContent .fileItem.checked .checkedBtn {
+  background-image: url("images/icon/checked.png");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: center;
+}
+.deleteWrap,
+.moveToWrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: scale(0);
+  transition: 0.2s;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  z-index: 2;
+  opacity: 0;
+}
+.deleteWrap.active,
+.moveToWrap.active {
+  transform: scale(1);
+  opacity: 1;
+}
+.deleteSure {
+  position: absolute;
+  width: 320px;
+  height: 180px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: border-box;
+  border: 2px solid #55addc;
+  border-radius: 5px;
+}
+.deleteSure dfn {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+}
+.deleteSure dfn .close {
+  background: url("sprite.png") no-repeat;
+  display: inline-block;
+  background-position: 0 -106px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.deleteSure dfn .close:hover {
+  transform: rotate(180deg) scale(1.3);
+}
+.deleteSure dfn .deleteInfo {
+  display: inline-block;
+  line-height: 30px;
+  font-family: "黑体";
+  font-size: 25px;
+  margin-top: 50px;
+}
+.deleteSure dfn .deleteInfoInp {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 5px;
+  line-height: 30px;
+  font-family: "黑体";
+  font-size: 25px;
+  margin-top: 50px;
+}
+.deleteSure dfn .cancelBtn,
+.deleteSure dfn .sureBtn {
+  display: inline-block;
+  position: absolute;
+  top: 100px;
+  height: 30px;
+  width: 80px;
+  left: calc(50% - 100px);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-style: normal;
+  line-height: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  transform: scale(1);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.deleteSure dfn .sureBtn {
+  left: calc(50% + 30px);
+  background-color: #28a5c4;
+}
+.deleteSure dfn .cancelBtn:hover {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.deleteSure dfn .sureBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.moveToBorder {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  background-color: white;
+  box-sizing: border-box;
+  border: 2px solid #55addc;
+  border-radius: 5px;
+}
+.moveToBorder .moveToHeader {
+  height: 70px;
+  width: 100%;
+  cursor: move;
+  border-bottom: 1px solid #68bcfa;
+}
+.moveToBorder .moveToHeader span {
+  display: inline-block;
+  font: 20px/70px "微软雅黑";
+  text-indent: 30px;
+  color: #68bcfa;
+}
+.moveToBorder .moveToHeader .close {
+  background: url("sprite.png") no-repeat;
+  display: inline-block;
+  background-position: 0 -106px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.moveToBorder .moveToHeader .close:hover {
+  transform: rotate(180deg) scale(1.3);
+}
+.moveToBorder .moveToContent {
+  box-sizing: border-box;
+  max-width: 596px;
+  max-height: 360px;
+  padding: 20px;
+  overflow: auto;
+}
+.moveToBorder .moveToContent .moveToUl .moveToLi .moveToDiv {
+  height: 30px;
+  border-top: 1px solid white ;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+.moveToBorder .moveToContent .moveToUl .moveToLi .moveToDiv.active {
+  background-color: rgba(93, 122, 255, 0.5);
+  border-top: 1px solid #5d7aff;
+  border-bottom: 1px solid #5d7aff;
+}
+.moveToBorder .moveToContent .moveToUl .moveToLi .moveToDiv.active1 {
+  background-color: rgba(93, 122, 255, 0.4);
+  border-top: 1px solid rgba(93, 122, 255, 0.9);
+  border-bottom: 1px solid rgba(93, 122, 255, 0.9);
+}
+.moveToBorder .moveToContent .moveToUl .moveToLi .moveToDiv:hover {
+  background-color: rgba(93, 122, 255, 0.3);
+  border-top: 1px solid rgba(93, 122, 255, 0.8);
+  border-bottom: 1px solid rgba(93, 122, 255, 0.8);
+}
+.moveToBorder .moveToContent .moveToUl .moveToLi .moveToDiv .filePathIcon {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  background-size: 25px 25px ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("images/icon/文件夹.png");
+  margin-right: 5px;
+}
+.moveToBorder .moveToContent .moveToUl .moveToLi .moveToDiv .filePathIcon.active {
+  background-image: url("images/icon/开文件夹.png");
+}
+.moveToBorder .moveToContent .moveToUl .moveToLi .moveToDiv .filePathName {
+  color: black;
+  display: inline-block;
+  line-height: 30px;
+  height: 30px;
+  vertical-align: top;
+  font-family: "微软雅黑";
+}
+.moveToBorder .moveFooter {
+  width: 90%;
+  height: 50px;
+  position: relative;
+}
+.moveToBorder .moveFooter .cancel,
+.moveToBorder .moveFooter .sure {
+  display: inline-block;
+  position: absolute;
+  right: 100px;
+  bottom: 10px;
+  border-radius: 5px;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+  color: #fff;
+  line-height: 30px;
+  font-size: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: 0.2s;
+}
+.moveToBorder .moveFooter .sure {
+  right: 0;
+}
+.moveToBorder .moveFooter .sure {
+  background-color: #28a5c4;
+}
+.moveToBorder .moveFooter .cancel:hover {
+  transform: scale(0.9);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.moveToBorder .moveFooter .sure:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}

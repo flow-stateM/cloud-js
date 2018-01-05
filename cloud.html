@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="cloud.css">
+</head>
+<body onselectstart="return false;">
+<!--加delete会高斯模糊-->
+<div class="wrap">
+    <!--头部-->
+    <header class="clear">
+        <h1></h1>
+        <div class="warning1"><i class="warningIcon1"></i>连接服务器超时，请稍后再试</div>
+        <div class="warning2"><i class="warningIcon2"></i>删除文件成功</div>
+        <div class="warning3"><i class="warningIcon3"></i>请选择文件</div>
+        <div class="set"></div>
+        <div class="userHead sprite"></div>
+    </header>
+    <!--操作按钮-->
+    <nav class="tool">
+        <div class="download"><span class="downloadIcon sprite"></span>下载</div>
+        <div class="share"><span class="shareIcon sprite"></span>分享</div>
+        <div class="move"><span class="moveIcon sprite"></span>移动到</div>
+        <div class="rename"><span class="renameIcon sprite"></span>重命名</div>
+        <div class="delete"><span class="deleteIcon sprite"></span>删除</div>
+        <div class="create"><span class="createIcon sprite"></span>新建文件夹</div>
+        <div class="reload"><span class="reloadIcon sprite"></span></div>
+        <div class="none"></div>
+        <div class="mode"><span class="modeIcon sprite"></span></div>
+        <div class="sort"><span class="sortIcon sprite"></span></div>
+    </nav>
+    <!--路径-->
+    <div class="path">
+        <!--全选按钮用checked控制是否选中-->
+        <div class="allChecked"></div>
+        <div class="pathIn">
+            <!--里面是具体路径的每一项-->
+            <div class="pathContent"><span>微云</span></div>
+            <div class="pathContent"><span>微云</span></div>
+            <div class="pathContent"><span>微云</span></div>
+        </div>
+    </div>
+    <!--当前目录内容  大图标版-->
+    <div class="fileWrap ">
+        <!--给content加none会显示没有文件 -->
+        <div class="fileContent">
+            <!--选中就是checked-->
+            <div class="fileItem checked">
+                <span class="checkedBtn"></span>
+                <!--active 时候可以重命名-->
+                <dfn class="fileItemName">
+                    <!--做JS时候注意做一个长度限制  改名字需要阻止冒泡  默认输入框displaynone-->
+                    <span class="    ">未命名文件夹</span>
+                    <input class="fileItemNameInput" type="text">
+                </dfn>
+            </div>
+            <div class="fileItem ">
+                <span class="checkedBtn"></span>
+                <dfn class="fileItemName">
+                    未命名文件夹
+                    <input class="fileItemNameInput" type="text">
+                </dfn>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除确定提示框  active显示   大wrap加class delete之后放大显示，-->
+<div class="deleteWrap">
+    <!-- <div class="deleteSure">
+        <dfn>
+            <i class="close"></i>
+            <span class="deleteInfo">确认要删除吗?</span>
+            <i class="cancelBtn">取消</i>
+            <i class="sureBtn">确定</i>
+        </dfn>
+    </div> -->
+    <!--<div class="deleteSure">-->
+        <!--<dfn>-->
+            <!--<i class="close"></i>-->
+            <!--<input class="deleteInfoInp">-->
+            <!--<i class="cancelBtn">取消</i>-->
+            <!--<i class="sureBtn">确定</i>-->
+        <!--</dfn>-->
+    <!--</div>-->
+</div>
+<div class="moveToWrap">
+    <div class="moveToBorder">
+        <div class="moveToHeader">
+            <span>请选择要移动到的位置</span>
+            <i class="close"></i>
+        </div>
+        <div class="moveToContent">
+            <!--<ul class="moveToUl">-->
+                <!--<li class="moveToLi">-->
+                    <!--&lt;!&ndash;每次缩进25px&ndash;&gt;-->
+                    <!--<div class="moveToDiv active">-->
+                        <!--<i class="filePathIcon active"></i>-->
+                        <!--<span class="filePathName">根目录</span>-->
+                    <!--</div>-->
+                    <!--<ul class="moveToUl">-->
+                        <!--<li class="moveToLi">-->
+                            <!--<div class="moveToDiv">-->
+                                <!--<i class="filePathIcon"></i>-->
+                                <!--<span class="filePathName"></span>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li class="moveToLi">-->
+                            <!--<div class="moveToDiv">-->
+                                <!--<i class="filePathIcon"></i>-->
+                                <!--<span class="filePathName"></span>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </div>
+        <div class="moveFooter">
+            <span class="cancel">取消</span>
+            <span class="sure">确定</span>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    console.log('author:Flow State,作者:毛世玉')
+</script>
+<script src="./js/tool.js"></script>
+<script src="./js/data.js"></script>
+<script src="./js/createHTML.js"></script>
+<script src="./js/navTool.js"></script>
+<script src="./js/cloud.js"></script>
+</html>
